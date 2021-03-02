@@ -338,7 +338,7 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xbcd62661a6b1ded703585d3af7d7649ef4dcdb5c',
     },
-    tokenSymbol: 'BNB',
+    tokenSymbol: 'DOT',
     tokenAddresses: {
       97: '',
       56: '0x7083609fce4d1d8dc0c979aab8c869ea2c873402',
