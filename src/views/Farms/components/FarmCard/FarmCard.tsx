@@ -103,7 +103,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   // NAR-CAKE LP. The images should be cake-bnb.svg, link-bnb.svg, nar-cake.svg
   // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
   const farmImage = farm.poolToken ? farm.tokenSymbol.toLowerCase() : farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
-
   const totalValue: BigNumber = useMemo(() => {
     if (!farm.lpTotalInQuoteToken) {
       return null
@@ -116,7 +115,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     }
     return farm.lpTotalInQuoteToken
   }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
-
   const totalValueFormated = totalValue
     ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
     : '-'
@@ -146,23 +144,25 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
       {!removed && (
         <Flex justifyContent="space-between" alignItems="center">
           <Text>{TranslateString(352, 'APR')}:</Text>
-          <Text bold style={{ display: 'flex', alignItems: 'center' }}>
-            {farm.apy ? (
-              <>
-                <ApyButton
-                  lpLabel={lpLabel}
-                  quoteTokenAdresses={quoteTokenAdresses}
-                  quoteTokenSymbol={quoteTokenSymbol}
-                  tokenAddresses={tokenAddresses}
-                  cakePrice={cakePrice}
-                  apy={farm.apy}
-                />
-                {farmAPY}%
-              </>
-            ) : (
-              <Skeleton height={24} width={80} />
-            )}
-          </Text>
+          {![2, 8, 22].includes(farm.pid) && (
+            <Text bold style={{ display: 'flex', alignItems: 'center' }}>
+              {farm.apy ? (
+                <>
+                  <ApyButton
+                    lpLabel={lpLabel}
+                    quoteTokenAdresses={quoteTokenAdresses}
+                    quoteTokenSymbol={quoteTokenSymbol}
+                    tokenAddresses={tokenAddresses}
+                    cakePrice={cakePrice}
+                    apy={farm.apy}
+                  />
+                  {farmAPY}%
+                </>
+              ) : (
+                <Skeleton height={24} width={80} />
+              )}
+            </Text>
+          )}
         </Flex>
       )}
       <Flex justifyContent="space-between">
