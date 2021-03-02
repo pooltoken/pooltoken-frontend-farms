@@ -25,7 +25,7 @@ const useAllEarnings = () => {
     }
 
     if (account) {
-      // fetchAllBalances()
+      fetchAllBalances()
     }
   }, [account, fastRefresh])
 
