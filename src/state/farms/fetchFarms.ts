@@ -27,7 +27,7 @@ const fetchFarms = async () => {
         },
         // Balance of LP tokens in the master chef contract
         {
-          address: farmConfig.isTokenOnly ? farmConfig.tokenAddresses[CHAIN_ID] : lpAdress,
+          address: farmConfig.poolToken ? farmConfig.tokenAddresses[CHAIN_ID] : lpAdress,
           name: 'balanceOf',
           params: [getMasterChefAddress()],
         },
@@ -60,7 +60,7 @@ const fetchFarms = async () => {
       let tokenAmount;
       let lpTotalInQuoteToken;
       let tokenPriceVsQuote;
-      if(farmConfig.isTokenOnly){
+      if(farmConfig.poolToken){
         tokenAmount = new BigNumber(lpTokenBalanceMC).div(new BigNumber(10).pow(tokenDecimals));
         if(farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD){
           tokenPriceVsQuote = new BigNumber(1);

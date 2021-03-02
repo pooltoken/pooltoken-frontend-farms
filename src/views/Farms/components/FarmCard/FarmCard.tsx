@@ -185,7 +185,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         <DetailsSection
           removed={removed}
           bscScanAddress={
-            farm.isTokenOnly
+            farm.poolToken
               ? `https://bscscan.com/token/${farm.tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
               : `https://bscscan.com/token/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`
           }
