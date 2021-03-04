@@ -3,6 +3,10 @@ export default {
     56: '0x2b3aa086d2804a302fbc58d0e62de9c73146f6b1',
     97: '',
   },
+  realCake: {
+    56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+    97: '',
+  },
   masterChef: {
     56: '0x6023064015234502e98f522f6d64cd05afac36d3',
     97: '',
@@ -27,4 +31,5 @@ export default {
     56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
     97: '0x8301f2213c0eed49a7e28ae4c3e91722919b8b47',
   },
+  
 }

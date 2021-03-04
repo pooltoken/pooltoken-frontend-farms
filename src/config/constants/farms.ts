@@ -46,8 +46,8 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x2b3aa086d2804a302fbc58d0e62de9c73146f6b1',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.REALCAKE,
+    quoteTokenAdresses: contracts.realCake,
     isCoreFarm: true,
   },
   {
@@ -77,7 +77,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'BUSD',
     tokenAddresses: {
       97: '',
-      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -336,7 +336,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'DOT',
     lpAddresses: {
       97: '',
-      56: '0xbcd62661a6b1ded703585d3af7d7649ef4dcdb5c',
+      56: '0x54C1ec2f543966953F2F7564692606EA7D5a184e',
     },
     tokenSymbol: 'DOT',
     tokenAddresses: {
